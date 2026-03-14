@@ -5,7 +5,7 @@
 
 # 안녕하세요, 나희경입니다!
 
- 나희경, Huigyeong Na, ナ・ヒギョン
+ 나희경 | Huigyeong Na | ナ・ヒギョン
 
 중앙대학교 소프트웨어학부 23학번
 
@@ -14,7 +14,7 @@
 <br>
 
 ## Languages
-1️⃣ 한국어 | 2️⃣ 日本語 | 3️⃣ English
+🇰🇷 한국어 | 🇯🇵 日本語 | 🇺🇸 English
 
 <br>
 
@@ -25,11 +25,11 @@
 <br>
 
 ## Tech Stack
-<img src="https://img.shields.io/badge/C-A8B9CC?style=flat&logo=C&logoColor=white"/>
-<img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=HTML5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS-663399?style=flat&logo=CSS&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white"/>
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=white"/>
+<img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS-663399?style=flat&logo=css&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white"/>
 
 <br>
 
@@ -47,5 +47,7 @@
 <a href="https://www.instagram.com/n0.s133p/" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-FF0069.svg?style=flat-square&logo=Instagram&logoColor=white"/>
 </a>
+
+<br>
 
 </div>
