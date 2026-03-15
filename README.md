@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=b2d2db&height=300&section=header&text=HG's%20GitHub&fontColor=auto&fontSize=90)
 
 
-<div align=center>
+<div align="center">
 
 # 안녕하세요, 나희경입니다!
 
