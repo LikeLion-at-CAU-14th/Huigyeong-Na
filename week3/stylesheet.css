@@ -1,32 +1,105 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+html{
+    background-color: #F8F9FA;
+    font-family: 'Pretendard', sans-serif;
+    color: #2D2D2D;
+}
+
 body{
-    background-color: slategray;
-}
-
-header{
-    background-color: darkcyan;
-    color: #eeeeee;
-    padding: 20px;
-    margin: 50px;
-    text-align: center;
-    border: 8px solid #121212;
-    border-radius: 20px;
-}
-
-main{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    margin: 0;
+}
+
+h1{
+    font-weight: 900;
+}
+
+nav ul{
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+a{
+    color: #121212;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 footer{
-    background-color: blue;
-    font-size: 50px;
-    color: #f0f0f0;
-    font-style: italic;
+    text-align: center;
 }
 
-.image img{
-    width: 300px;
-    border: 3px dashed orange;
-    border-radius: 50%;
+footer p, footer a{
+    color: #5b5b5b;
+    font-size: 12px;
 }

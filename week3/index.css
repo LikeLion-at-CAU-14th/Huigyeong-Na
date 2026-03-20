@@ -1,0 +1,22 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+#main-name{
+    text-align: center;
+    transform: scaleX(1.3);
+    transform-origin: center;
+    font-size: 100px;
+    padding-bottom: 100px;
+}
+
+#nav_index{
+    font-weight: 900;
+    text-decoration: underline;
+}
