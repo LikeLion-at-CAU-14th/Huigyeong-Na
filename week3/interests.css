@@ -33,10 +33,15 @@ summary{
     font-size: 24px;
     font-weight: 700;
     text-align: center;
+    transform: scaleX(1.1);
 }
 
 img{
     display: block;
     margin: auto;
     width: 200px;
+}
+
+details p{
+    font-weight: 600;
 }
