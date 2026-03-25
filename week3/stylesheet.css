@@ -88,7 +88,7 @@ nav ul{
     justify-content: space-around;
 }
 
-.nav_now{
+.active{
     font-weight: 900;
     text-decoration: underline;
 }
