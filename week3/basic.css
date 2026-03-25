@@ -23,13 +23,13 @@ h3{
     padding-left: 5px;
 }
 
-#lang{
+.lang{
     text-decoration: line-through;
     font-size: 90%;
     font-weight: 500;
     color: #979797;
 }
 
-#lang:hover{
+.lang:hover{
     text-decoration: none;
 }
