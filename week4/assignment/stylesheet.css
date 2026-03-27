@@ -54,7 +54,11 @@ body{
     width: 100%;
     font-size: 16px;
     border: none;
-    border-bottom: 1px solid #0068FF;
+    border-bottom: 1px solid #CFCFCF;
     margin-top: 38px;
     margin-bottom: 21px;
+}
+
+#inputEmail{
+    border-bottom: 1px solid #0068FF;
 }
