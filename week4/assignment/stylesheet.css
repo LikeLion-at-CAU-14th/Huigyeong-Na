@@ -5,6 +5,7 @@
 }
 
 *{
+    font-family: "Noto Sans CJK KR";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -42,7 +43,6 @@ body{
 
 .signup__info__input label{
     color: #797979;
-    font-family: "Noto Sans CJK KR";
     font-size: 16px;
     font-size: normal;
     font-weight: 400;
@@ -61,4 +61,29 @@ body{
 
 #inputEmail{
     border-bottom: 1px solid #0068FF;
+}
+
+.signup__gender{
+    margin: 52px auto 50px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    justify-items: center;
+    gap: 30px;
+    width: max-content;
+}
+
+.signup__gender__input{
+    display: flex;
+    align-items: center;
+}
+
+.signup__gender__input input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #D2D2D2;
+    border-radius: 50%;
+    background-color: #EBEBEB;
 }
