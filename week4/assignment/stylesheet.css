@@ -1,0 +1,40 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+:root{
+    --likelion: #FF7710;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #FFF;
+}
+
+.signup{
+    width: 670px;
+    height: 960px;
+    margin: 60px auto;
+    padding: 80px 100px 70px 100px;
+    border-radius: 20px;
+    border: 1px solid var(--likelion);
+    background: #FFF;
+    box-shadow: 7px 7px 39px 0 rgba(255, 119, 16, 0.25);
+}
+
+.signup__title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup__title__text{
+    color: var(--likelion);
+    font-family: Pretendard;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
