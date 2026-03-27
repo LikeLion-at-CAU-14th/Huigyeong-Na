@@ -28,6 +28,7 @@ body{
 .signup__title{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 112px;
 }
 
 .signup__title__text{
@@ -37,4 +38,23 @@ body{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.signup__info__input label{
+    color: #797979;
+    font-family: "Noto Sans CJK KR";
+    font-size: 16px;
+    font-size: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.signup__info__input input{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #0068FF;
+    margin-top: 38px;
+    margin-bottom: 21px;
 }
