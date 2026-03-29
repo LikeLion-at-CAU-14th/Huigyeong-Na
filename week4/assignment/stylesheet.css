@@ -120,6 +120,14 @@ body{
     background-color: var(--likelion);
 }
 
+.signup__agreement input:checked::after{
+    content: "✔";
+    color: #FFFFFF;
+    position: relative;
+    top: -1.5px;
+    left: 4px;
+}
+
 .signup__agreement label{
     font-size: 14px;
     font-style: normal;
