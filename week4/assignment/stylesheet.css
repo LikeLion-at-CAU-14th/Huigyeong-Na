@@ -27,8 +27,11 @@ body{
 }
 
 .signup__title{
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
     justify-content: space-between;
+    margin: 0 auto;
     margin-bottom: 112px;
 }
 
