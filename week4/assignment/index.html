@@ -18,48 +18,50 @@
             <h1 class="signup__title__text">회원 가입을 위해 정보를 입력해주세요</h1>
         </div>
 
-        <div class="signup__info">
-            <div class="signup__info__input">
-                <label for="inputEmail">* 이메일</label>
-                <input type="email" id="inputEmail">
+        <form action="" method="get">
+            <div class="signup__info">
+                <div class="signup__info__input">
+                    <label for="inputEmail">* 이메일</label>
+                    <input type="email" id="inputEmail">
+                </div>
+
+                <div class="signup__info__input">
+                    <label for="inputName">* 이름</label>
+                    <input type="text" id="inputName">
+                </div>
+
+                <div class="signup__info__input">
+                    <label for="inputPassword">* 비밀번호</label>
+                    <input type="password" id="inputPassword">
+                </div>
+
+                <div class="signup__info__input">
+                    <label for="inputPasswordConfirm">* 비밀번호 확인</label>
+                    <input type="text" id="inputPasswordConfirm">
+                </div>
             </div>
 
-            <div class="signup__info__input">
-                <label for="inputName">* 이름</label>
-                <input type="text" id="inputName">
+            <div class="signup__gender">
+                <div class="signup__gender__input">
+                    <input type="radio" id="female">
+                    <label for="female">여성</label>
+                </div>
+
+                <div class="signup__gender__input">
+                    <input type="radio" id="male">
+                    <label for="male">남성</label>
+                </div>
             </div>
 
-            <div class="signup__info__input">
-                <label for="inputPassword">* 비밀번호</label>
-                <input type="password" id="inputPassword">
+            <div class="signup__agreement">
+                <input type="radio" id="agree">
+                <label for="agree">이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.</label>
             </div>
 
-            <div class="signup__info__input">
-                <label for="inputPasswordConfirm">* 비밀번호 확인</label>
-                <input type="text" id="inputPasswordConfirm">
-            </div>
-        </div>
+            <hr class="signup__line">
 
-        <div class="signup__gender">
-            <div class="signup__gender__input">
-                <input type="radio" id="female">
-                <label for="female">여성</label>
-            </div>
-
-            <div class="signup__gender__input">
-                <input type="radio" id="male">
-                <label for="male">남성</label>
-            </div>
-        </div>
-
-        <div class="signup__agreement">
-            <input type="radio" id="agree">
-            <label for="agree">이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.</label>
-        </div>
-
-        <hr class="signup__line">
-
-        <button class="signup__button">가입하기</button>
+            <button class="signup__button">가입하기</button>
+        </form>
     </div>
 </body>
 </html>
