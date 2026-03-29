@@ -62,6 +62,10 @@ body{
     margin-bottom: 21px;
 }
 
+.signup__info__input input:focus{
+    outline: none;
+}
+
 #inputEmail{
     border-bottom: 1px solid #0068FF;
 }
@@ -91,6 +95,10 @@ body{
     background-color: #EBEBEB;
 }
 
+.signup__gender__input input:checked{
+    background-color: var(--likelion);
+}
+
 .signup__agreement{
     display: flex;
     align-items: center;
@@ -106,6 +114,10 @@ body{
     border-radius: 3px;;
     border: 1px solid #C4C4C4;
     background-color: #FFFFFF;
+}
+
+.signup__agreement input:checked{
+    background-color: var(--likelion);
 }
 
 .signup__agreement label{
