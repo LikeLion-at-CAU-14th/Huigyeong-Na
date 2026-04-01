@@ -14,10 +14,13 @@ const resultText = document.getElementById("display-result");
 const myScoreText = document.getElementsByClassName("my-score")[0];
 const comScoreText = document.getElementsByClassName("computer-score")[0];
 
+const resetBtn = document.getElementById("reset-button");
+
 // 2. 이벤트 설정
 rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
 paperBtn.addEventListener("click", displayMyChoice);
+resetBtn.addEventListener("click", resetScore);
 
 // 3. displayMyChoice 함수 설정
 function displayMyChoice(e) {
@@ -126,4 +129,12 @@ function updateScore(winner){
 function displayScore(){
     myScoreText.innerText = myScore;
     comScoreText.innerText = comScore;
+}
+
+// 10. 점수판 리셋 함수
+function resetScore(){
+    myScore = 0;
+    comScore = 0;
+
+    displayScore();
 }
