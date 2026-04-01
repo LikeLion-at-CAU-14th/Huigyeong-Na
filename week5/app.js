@@ -9,6 +9,8 @@ const rockBtn = document.getElementById("rock");
 const scissorsBtn = document.getElementById("scissors");
 const paperBtn = document.getElementById("paper");
 
+const resultText = document.getElementById("display-result");
+
 // 2. 이벤트 설정
 rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
@@ -48,4 +50,47 @@ function displayComChoice(result) {
 function start(mychoice) {
     let resultArray = getComChoice();
     displayComChoice(resultArray);
+
+    //mychoice에 "rock", "scissors", "paper" 중 하나 저장
+    //resultArray[0]에 "rock", "scissors", "paper" 중 하나 저장
+    decideWinner(mychoice, resultArray[0]);
+}
+
+// 7. 승패 판단
+function decideWinner(myChoice, comChoice){
+    if (myChoice == "rock"){
+        if (comChoice == "rock"){
+            resultText.innerText = "Draw!";
+        }
+        else if (comChoice == "scissors"){
+            resultText.innerText = "Win!";
+        }
+        else if (comChoice == "paper"){
+            resultText.innerText = "Lose!";
+        }
+    }
+
+    else if (myChoice == "scissors"){
+        if (comChoice == "rock"){
+            resultText.innerText = "Lose!";
+        }
+        else if (comChoice == "scissors"){
+            resultText.innerText = "Draw!";
+        }
+        else if (comChoice == "paper"){
+            resultText.innerText = "Win!";
+        }
+    }
+
+    else if (myChoice == "paper"){
+        if (comChoice == "rock"){
+            resultText.innerText = "Win!";
+        }
+        else if (comChoice == "scissors"){
+            resultText.innerText = "Lose!";
+        }
+        else if (comChoice == "paper"){
+            resultText.innerText = "Draw!";
+        }
+    }
 }
