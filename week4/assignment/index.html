@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <title>회원가입</title>
+</head>
+<body>
+    <div class="signup">
+        <div class="signup__title">
+            <svg class="signup__logo" xmlns="http://www.w3.org/2000/svg" width="58" height="29" viewBox="0 0 58 29" fill="none">
+                <path d="M0 0H18.5074V10.2141L0 0Z" fill="#FF7710"/>
+                <path d="M58 0H39.4926V10.2141L58 0Z" fill="#FF7710"/>
+                <path d="M16.6967 1.27035e-05H19.5V28.5L16.6967 29V1.27035e-05Z" fill="#FF7710"/>
+                <path d="M16.6967 22.5H39.4926L39.4926 29H16.6967L16.6967 22.5Z" fill="#FF7710"/>
+            </svg>
+            <h1 class="signup__title__text">회원 가입을 위해 정보를 입력해주세요</h1>
+        </div>
+
+        <form action="" method="post">
+            <div class="signup__info">
+                <div class="signup__info__input">
+                    <label for="inputEmail">* 이메일</label>
+                    <input type="email" id="inputEmail">
+                </div>
+
+                <div class="signup__info__input">
+                    <label for="inputName">* 이름</label>
+                    <input type="text" id="inputName">
+                </div>
+
+                <div class="signup__info__input">
+                    <label for="inputPassword">* 비밀번호</label>
+                    <input type="password" id="inputPassword">
+                </div>
+
+                <div class="signup__info__input">
+                    <label for="inputPasswordConfirm">* 비밀번호 확인</label>
+                    <input type="password" id="inputPasswordConfirm">
+                </div>
+            </div>
+
+            <div class="signup__gender">
+                <div class="signup__gender__input">
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">여성</label>
+                </div>
+
+                <div class="signup__gender__input">
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">남성</label>
+                </div>
+            </div>
+
+            <div class="signup__agreement">
+                <input type="checkbox" id="agree">
+                <label for="agree">이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.</label>
+            </div>
+
+            <hr class="signup__line">
+
+            <button class="signup__button">가입하기</button>
+        </form>
+    </div>
+</body>
+</html>
