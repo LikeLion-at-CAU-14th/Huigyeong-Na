@@ -16,11 +16,14 @@ const comScoreText = document.getElementsByClassName("computer-score")[0];
 
 const resetBtn = document.getElementById("reset-button");
 
+const themeBtn = document.getElementById("theme-button");
+
 // 2. 이벤트 설정
 rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
 paperBtn.addEventListener("click", displayMyChoice);
 resetBtn.addEventListener("click", resetScore);
+themeBtn.addEventListener("click", changeTheme);
 
 // 3. displayMyChoice 함수 설정
 function displayMyChoice(e) {
@@ -137,4 +140,31 @@ function resetScore(){
     comScore = 0;
 
     displayScore();
+}
+
+// 11. 테마 변경 함수
+let themeNow = "light";
+
+function changeTheme(){
+    if (themeNow == "light"){
+        const changeClassElements = document.querySelectorAll(".change");
+
+        for (let now of changeClassElements){
+            now.classList.replace("change", "change-reverse");
+        }
+
+        themeNow = "dark";
+        themeBtn.innerText = "☀️"
+    }        
+
+    else if (themeNow == "dark"){
+        const changeReverseClassElements = document.querySelectorAll(".change-reverse");
+
+        for (let now of changeReverseClassElements){
+            now.classList.replace("change-reverse", "change");
+        }
+
+        themeNow = "light";
+        themeBtn.innerText = "🌙"
+    }
 }

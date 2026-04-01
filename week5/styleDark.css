@@ -12,6 +12,9 @@ body {
 
   font-family: "Delicious Handrawn";
   font-size: 30px;
+
+  color: white;
+  background-color: black;
 }
 
 button {
@@ -34,14 +37,15 @@ button {
 #reset-button {
   font-size: 15px;
   border-radius: 50%;
-  border: 2px solid;
-  padding: 3px;
+  font-size: 15px;
 }
 
 .change-reverse {
-  color: white;
-  background-color: black;
-  border-color: white !important;
+  border: white solid 2px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 3px;
 }
 
 #title {
@@ -57,7 +61,7 @@ button {
 }
 
 .contents {
-  border: black solid 4px;
+  border: white solid 4px;
 }
 
 /* section1(점수판) */
@@ -131,12 +135,12 @@ button {
 
 .fa-regular {
   border-radius: 50%;
-  border: black 4px solid;
+  border: white 4px solid;
 }
 
 #my-hand-icon,
 #computer-hand-icon {
-  border: black;
+  border: white;
 }
 
 #my-hand-text,
@@ -155,5 +159,5 @@ button {
 }
 
 .title {
-  border-bottom: black solid 3px;
+  border-bottom: white solid 3px;
 }
