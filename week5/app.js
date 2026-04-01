@@ -11,6 +11,9 @@ const paperBtn = document.getElementById("paper");
 
 const resultText = document.getElementById("display-result");
 
+const myScoreText = document.getElementsByClassName("my-score")[0];
+const comScoreText = document.getElementsByClassName("computer-score")[0];
+
 // 2. 이벤트 설정
 rockBtn.addEventListener("click", displayMyChoice);
 scissorsBtn.addEventListener("click", displayMyChoice);
@@ -56,41 +59,71 @@ function start(mychoice) {
     decideWinner(mychoice, resultArray[0]);
 }
 
-// 7. 승패 판단
+// 7. 승패 판단 함수
 function decideWinner(myChoice, comChoice){
     if (myChoice == "rock"){
         if (comChoice == "rock"){
             resultText.innerText = "Draw!";
+            displayScore();
         }
         else if (comChoice == "scissors"){
             resultText.innerText = "Win!";
+            updateScore("me");
         }
         else if (comChoice == "paper"){
             resultText.innerText = "Lose!";
+            updateScore("com");
         }
     }
 
     else if (myChoice == "scissors"){
         if (comChoice == "rock"){
             resultText.innerText = "Lose!";
+            updateScore("com");
         }
         else if (comChoice == "scissors"){
             resultText.innerText = "Draw!";
+            displayScore();
         }
         else if (comChoice == "paper"){
             resultText.innerText = "Win!";
+            updateScore("me");
         }
     }
 
     else if (myChoice == "paper"){
         if (comChoice == "rock"){
             resultText.innerText = "Win!";
+            updateScore("me");
         }
         else if (comChoice == "scissors"){
             resultText.innerText = "Lose!";
+            updateScore("com");
         }
         else if (comChoice == "paper"){
             resultText.innerText = "Draw!";
+            displayScore();
         }
     }
+}
+
+
+// 8. 점수판 업데이트 함수
+let myScore = 0;
+let comScore = 0;
+
+function updateScore(winner){
+    if (winner == "me"){
+        myScore++;
+    }
+    else if (winner == "com"){
+        comScore++;
+    }
+    displayScore();
+}
+
+// 9. 점수판 화면에 띄우는 함수
+function displayScore(){
+    myScoreText.innerText = myScore;
+    comScoreText.innerText = comScore;
 }
