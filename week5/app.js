@@ -89,10 +89,10 @@ let myScore = 0;
 let comScore = 0;
 
 function updateScore(winner){
-    if (winner == "me"){
+    if (winner === "me"){
         myScore++;
     }
-    else if (winner == "com"){
+    else if (winner === "com"){
         comScore++;
     }
     displayScore();
