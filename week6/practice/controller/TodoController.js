@@ -1,4 +1,5 @@
 import Todo from "../DOM/Todo.js";
+import CompleteController from "./CompleteController.js";
 
 class TodoController{
     constructor(todo){
@@ -29,14 +30,10 @@ class TodoController{
         }
 
         doneTodo(){
-            this.innerNode.classList.toggle('done-text');
-            this.comBtnNode.classList.toggle('done-btn');
-            if(this.comBtnNode.innerText == '미완'){
-                this.comBtnNode.innerText = '완료';
-            }
-            else{
-                this.comBtnNode.innerText = '미완';
-            }
+            const text = this.innerNode.innerText;
+            this.delTodo();
+            const completeController = new CompleteController(text);
+            completeController.addComplete();
         }
 
 }
