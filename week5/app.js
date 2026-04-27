@@ -116,25 +116,14 @@ function resetScore(){
 let themeNow = "light";
 
 function changeTheme(){
-    if (themeNow == "light"){
-        const changeClassElements = document.querySelectorAll(".change");
+    const elements = document.querySelectorAll(".change, .change-reverse");
 
-        for (let now of changeClassElements){
-            now.classList.replace("change", "change-reverse");
-        }
-
-        themeNow = "dark";
-        themeBtn.innerText = "☀️"
-    }        
-
-    else if (themeNow == "dark"){
-        const changeReverseClassElements = document.querySelectorAll(".change-reverse");
-
-        for (let now of changeReverseClassElements){
-            now.classList.replace("change-reverse", "change");
-        }
-
-        themeNow = "light";
-        themeBtn.innerText = "🌙"
+    for (let now of elements) {
+        now.classList.toggle("change");
+        now.classList.toggle("change-reverse");
     }
+
+    const isLight = themeNow === "light";
+    themeNow = isLight ? "dark" : "light";
+    themeBtn.innerText = isLight ? "☀️" : "🌙";
 }
