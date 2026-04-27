@@ -67,49 +67,19 @@ function start(mychoice) {
 
 // 7. 승패 판단 함수
 function decideWinner(myChoice, comChoice){
-    if (myChoice == "rock"){
-        if (comChoice == "rock"){
-            resultText.innerText = "Draw!";
-            displayScore();
-        }
-        else if (comChoice == "scissors"){
-            resultText.innerText = "Win!";
-            updateScore("me");
-        }
-        else if (comChoice == "paper"){
-            resultText.innerText = "Lose!";
-            updateScore("com");
-        }
+    if (myChoice === comChoice){
+        resultText.innerText = "Draw!";
+        displayScore();
     }
 
-    else if (myChoice == "scissors"){
-        if (comChoice == "rock"){
-            resultText.innerText = "Lose!";
-            updateScore("com");
-        }
-        else if (comChoice == "scissors"){
-            resultText.innerText = "Draw!";
-            displayScore();
-        }
-        else if (comChoice == "paper"){
-            resultText.innerText = "Win!";
-            updateScore("me");
-        }
+    else if (myChoice === "rock" && comChoice === "scissors" || myChoice === "paper" && comChoice === "rock" || myChoice === "scissors" && comChoice === "paper"){
+        resultText.innerText = "Win!";
+        updateScore("me");
     }
 
-    else if (myChoice == "paper"){
-        if (comChoice == "rock"){
-            resultText.innerText = "Win!";
-            updateScore("me");
-        }
-        else if (comChoice == "scissors"){
-            resultText.innerText = "Lose!";
-            updateScore("com");
-        }
-        else if (comChoice == "paper"){
-            resultText.innerText = "Draw!";
-            displayScore();
-        }
+    else{
+        resultText.innerText = "Lose!";
+        updateScore("com");
     }
 }
 
