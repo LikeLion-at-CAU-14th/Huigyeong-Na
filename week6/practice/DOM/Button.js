@@ -15,6 +15,12 @@ class Button extends DOM {
             this.node.innerText = '';
             this.node.appendChild(img);
         }
+        else if (innerText === '미완'){
+            const img = new Image();
+            img.src = './src/rotate-ccw.svg';
+            this.node.innerText = '';
+            this.node.appendChild(img);
+        }
     }
 }
 
