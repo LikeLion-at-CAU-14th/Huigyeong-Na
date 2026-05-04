@@ -1,6 +1,9 @@
 // 한국관광공사 사진 갤러리 API 기본 주소
 const baseURL = "http://apis.data.go.kr/B551011/PhotoGalleryService1";
 
+// API에서 body의 totalCount 미리 확인해둠
+const totalCount = 6117;
+
 // API에 데이터를 요청할 때 필요한 세부 조건 (파라미터) 모아둔 객체
 const option = {
   serviceKey:
@@ -12,6 +15,7 @@ const option = {
   _type: "json",          // 응답 데이터 타입
 };
 
+
 // HTML에서 id="container" 요소 찾아 container 변수에 저장
 const container = document.getElementById("container");
 
@@ -19,15 +23,20 @@ const container = document.getElementById("container");
 let photoIndex = 1;
 
 // 비동기 함수 -> API 서버에서 데이터들을 가져오는 시간이 걸리는 작업들을 순차적으로 처리
-async function getData(){
-    let count = 1;
-
-    // baseURL과 option 객체의 값을 조합해 최종적으로 데이터를 요청할 주소 만듦
-    const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${option.pageNo}&serviceKey=${option.serviceKey}`
-    
-    const fetchData = await fetch(url);        // 해당 URL로 네트워크 요청을 보내 데이터를 가져옴
-    const toJSON = await fetchData.json();
-    const datas = await toJSON.response.body.items.item;  // JSON 구조에서 실제로 필요한 사진 정보 담긴 배열
+async function getData(){    
+  // 전체 데이터 개수로 랜덤한 페이지 가져오기
+  const randomIndex = Math.floor(Math.random() * totalCount);
+  const page = Math.floor(randomIndex / option.numofRows) + 1;
+  
+  let count = 1;
+  
+  // baseURL과 option 객체의 값을 조합해 최종적으로 데이터를 요청할 주소 만듦
+  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${page}&serviceKey=${option.serviceKey}`
+  
+  const fetchData = await fetch(url);        // 해당 URL로 네트워크 요청을 보내 데이터를 가져옴
+  const toJSON = await fetchData.json();
+  const datas = await toJSON.response.body.items.item;  // JSON 구조에서 실제로 필요한 사진 정보 담긴 배열
+  
 
     console.log(datas);
 
