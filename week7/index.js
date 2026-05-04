@@ -29,6 +29,8 @@ async function getData(){
     const toJSON = await fetchData.json();
     const datas = await toJSON.response.body.items.item;  // JSON 구조에서 실제로 필요한 사진 정보 담긴 배열
 
+    console.log(datas);
+
     datas.forEach((data, i) => {
         const list = document.createElement("div");
         list.id = "list";        // <div id="list"></div> <- 근데 이러면 id="list"인 div 여러 개 생기는 거 아닌가(반복문이니까)
@@ -42,9 +44,23 @@ async function getData(){
         제목: ${data.galTitle}
         장소: ${data.galPhotographyLocation}`;
 
+        const detailButton = document.createElement("button");
+        detailButton.innerText = "더보기";
+
         list.appendChild(image);
         list.appendChild(info);
+        list.appendChild(detailButton);
 
         container.appendChild(list);
+
+        // 제목, 생성 시간, 촬영자, 키워드를 URL에 Query String으로 달아 detail.html에서 활용 가능하도록
+        detailButton.addEventListener('click', () => {
+          const title = data.galTitle;
+          const imgURL = data.galWebImageUrl;
+          const date = data.galCreatedtime;
+          const photographer = data.galPhotographer;
+          const keywords = data.galSearchKeyword;
+          location.href = `detail.html?title=${title}&imgURL=${imgURL}&date=${date}&photographer=${photographer}&keywords=${keywords}`;
+        })
     });
 }
