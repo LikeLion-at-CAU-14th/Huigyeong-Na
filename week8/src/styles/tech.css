@@ -1,0 +1,28 @@
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.flex-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech_img{
+    width: 300px;
+    border-radius: 0;
+    box-shadow: none;
+    margin-right: 0;
+}
+
+.tech_p{
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
