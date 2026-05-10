@@ -2,8 +2,8 @@ import '../styles/about.css'
 
 function About() {
   return (
-    <main>
-        <img src="/profile.jpg" alt="나희경 사진" />
+    <main className="about_main">
+        <img src="/profile.jpg" className="about_img" alt="나희경 사진" />
         <ul>
             <li><p class="myname">나희경</p></li>
             <li><p class="info_list">2004. 10. 07.</p></li>
