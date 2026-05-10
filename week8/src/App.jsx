@@ -10,6 +10,7 @@ import Interests from './pages/Interests';
 
 function App() {
   return (
+    <div className="layout">
     <BrowserRouter>
       <Header />
 
@@ -22,6 +23,7 @@ function App() {
 
       <Footer />
     </BrowserRouter>
+    </div>
   )
 }
 
