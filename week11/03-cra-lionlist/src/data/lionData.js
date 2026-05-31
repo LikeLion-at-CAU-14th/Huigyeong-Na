@@ -1,16 +1,33 @@
 //lionData.js 내용
 export const lionData = [
-    // 👦 남성 멤버 5명
-    { id: 1, name: "류수민", gender: "male" },
-    { id: 2, name: "이준원", gender: "male" },
-    { id: 3, name: "최기훈", gender: "male" },
-    { id: 4, name: "최준혁", gender: "male" },
-
-    // 👧 여성 멤버 5명
-    { id: 5, name: "김지수", gender: "female" },
-    { id: 6, name: "나희경", gender: "female" },
-    { id: 7, name: "소재희", gender: "female" },
-    { id: 8, name: "안서현", gender: "female" },
-    { id: 9, name: "오유민", gender: "female" },
-    { id: 10, name: "추서연", gender: "female" },
+    // 프론트
+    { id: 1, name: "김지수", part: "front" },
+    { id: 2, name: "나희경", part: "front" },
+    { id: 3, name: "류수민", part: "front" },
+    { id: 4, name: "소재희", part: "front" },
+    { id: 5, name: "안서현", part: "front" },
+    { id: 6, name: "오유민", part: "front" },
+    { id: 7, name: "이준원", part: "front" },
+    { id: 8, name: "최기훈", part: "front" },
+    { id: 9, name: "최준혁", part: "front" },
+    { id: 10, name: "추서연", part: "front" },
+    { id: 11, name: "권민찬", part: "back"},
+    { id: 12, name: "김예은", part: "back"},
+    { id: 13, name: "김주연", part: "back"},
+    { id: 14, name: "김지윤", part: "back"},
+    { id: 15, name: "김희선", part: "back"},
+    { id: 16, name: "서유진", part: "back"},
+    { id: 17, name: "안지요", part: "back"},
+    { id: 18, name: "이시형", part: "back"},
+    { id: 19, name: "조상원", part: "back"},
+    { id: 20, name: "차예은", part: "back"},
+    { id: 21, name: "곽효석", part: "planDesign"},
+    { id: 22, name: "김기민", part: "planDesign"},
+    { id: 23, name: "김다인", part: "planDesign"},
+    { id: 24, name: "김성은", part: "planDesign"},
+    { id: 25, name: "김지연", part: "planDesign"},
+    { id: 26, name: "방세현", part: "planDesign"},
+    { id: 27, name: "오채린", part: "planDesign"},
+    { id: 28, name: "윤아영", part: "planDesign"},
+    { id: 29, name: "후영리", part: "planDesign"}
 ];
