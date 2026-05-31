@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const FILTER_LIST = [
     { label: '🦁 전체', value: 'all' },
-    { label: '👦 프론트',   value: 'front' },
-    { label: '👧 백',   value: 'back' },
-    { label: '👧 기디',   value: 'planDesign' },
+    { label: '💻 프론트',   value: 'front' },
+    { label: '⚙️ 백',   value: 'back' },
+    { label: '🎨 기디',   value: 'planDesign' },
 ];
 
 const FilterBar = ({ filter, setFilter }) => {
