@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Quiz = () => {
+    const navigate = useNavigate();
+
     const [quizs, setQuizs] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [answerList, setAnswerList] = useState([]);
     const [score, setScore] = useState(0);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [resultMessage, setResultMessage] = useState("");
 
     useEffect(() => {
         const fetchQuizs = async() => {
@@ -33,15 +35,12 @@ const Quiz = () => {
                 }
             }
             setScore(newScore);
-
-            // 정답 문구 get
-            const messageResponse = await axios.get(`https://week12-api-rcwo.onrender.com/api/result?score=${newScore}`);
-            setResultMessage(messageResponse.data.message);
-
             setIsSubmitted(true);
+
+            navigate(`/result?score=${newScore}`);
         }
         submitAnswers()
-    }, [quizs.length, currentIndex, isSubmitted, answerList, score])
+    }, [quizs.length, currentIndex, isSubmitted, answerList, score, navigate])
 
         
     function handleAnswerClick(answer) {
@@ -59,15 +58,10 @@ const Quiz = () => {
         return <div>Loading...</div>
     }
     
-    if (currentIndex >= quizs.length){
-        return (
-            <ResultDom>
-                <h2>{resultMessage}</h2>
-                <p>{score}점</p>
-            </ResultDom>
-        )
+    if (currentIndex >= quizs.length) {
+        return <div>Loading...</div>
     }
-    
+
     const currentQuiz = quizs[currentIndex];
 
     return(
@@ -83,10 +77,6 @@ const Quiz = () => {
 }
 
 export default Quiz;
-
-const ResultDom = styled.div`
-    text-align: center;
-`
 
 const QuizDom = styled.div`
     text-align: center;
