@@ -60,21 +60,43 @@ const Quiz = () => {
     }
     
     if (currentIndex >= quizs.length){
-        return <div><p>{resultMessage}</p></div>
+        return (
+            <ResultDom>
+                <h2>{resultMessage}</h2>
+                <p>{score}점</p>
+            </ResultDom>
+        )
     }
     
     const currentQuiz = quizs[currentIndex];
 
     return(
-        <div>
-            <h2>{currentQuiz.question}</h2>
-            <div>
+        <QuizDom>
+            <QuizTitle>{currentQuiz.question}</QuizTitle>
+            <ButtonListDom>
                 <button key={currentQuiz.answers[0]} onClick={() => handleAnswerClick(currentQuiz.answers[0])}>{currentQuiz.answers[0]}</button>
                 <button key={currentQuiz.answers[1]} onClick={() => handleAnswerClick(currentQuiz.answers[1])}>{currentQuiz.answers[1]}</button>
                 <button key={currentQuiz.answers[2]} onClick={() => handleAnswerClick(currentQuiz.answers[2])}>{currentQuiz.answers[2]}</button>
-            </div>
-        </div>
+            </ButtonListDom>
+        </QuizDom>
     )
 }
 
 export default Quiz;
+
+const ResultDom = styled.div`
+    text-align: center;
+`
+
+const QuizDom = styled.div`
+    text-align: center;
+`;
+
+const QuizTitle = styled.h2`
+`;
+
+const ButtonListDom = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+`;
