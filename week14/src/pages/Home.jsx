@@ -3,7 +3,7 @@ import { getCookie, removeCookie, setCookie } from "../auth/cookieStorage";
 import { login } from "../apis/auth";
 import { getAccessToken, setTokens } from "../auth/tokenStorage";
 import { useForm } from "../hooks/useForm";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const SAVED_ID_COOKIE = "saveId";
