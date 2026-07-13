@@ -16,7 +16,10 @@ const Mypage = () => {
         setLoading(false);
       })
       .catch((error) => {
-        // TODO: RefreshToken 만료 시 자동 로그아웃 후 로그인 페이지로 이동하기
+        if (error.response.status === 401) {
+          clearTokens();
+          navigate('/', {replace: true});
+        }
       });
   }, []);
 
