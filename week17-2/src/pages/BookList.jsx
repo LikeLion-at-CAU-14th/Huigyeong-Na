@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {Link, Outlet, useNavigate} from 'react-router-dom';
 import BookDetailDom from './BookDetail';
 import { useEffect, useState } from 'react';
@@ -21,10 +20,10 @@ const BookList = () => {
       }, [])
 
     return(
-        <MenuDom>
-            <BookListDom>
-              <Title onClick={goHome}>Home</Title>
-              <Title>Book List</Title>
+        <div className="flex justify-start items-center gap-[20px] w-full h-[80vh] m-[20px]">
+            <div className="flex flex-col justify-start bg-white p-[50px] h-[80%] rounded-[0_10px_10px_0] shadow-[2px_2px_5px_rgba(0,0,0,0.1)]">
+              <div className="text-[40px] text-[#535353] font-[700]" onClick={goHome}>Home</div>
+              <div className="text-[40px] text-[#535353] font-[700]">Book List</div>
               <ul>
                 {books.map((book) => (
                   <Link key={book.id} to ={`/books/${book.id}`}>
@@ -32,39 +31,12 @@ const BookList = () => {
                   </Link>
                 ))}
               </ul>
-            </BookListDom>
+            </div>
             <BookDetailDom>
               <Outlet />
             </BookDetailDom>
-        </MenuDom>
+        </div>
     )
 }
-
-const MenuDom = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  height: 80vh;
-  margin: 20px;
-`;
-
-const Title = styled.div`
-  font-size: 40px;
-  color: #535353;
-  font-weight: 700;
-`;
-
-const BookListDom = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  background-color: white;
-  padding: 50px;
-  height: 80%;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-`;
 
 export default BookList;
