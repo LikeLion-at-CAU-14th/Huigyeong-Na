@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import BookList from './pages/BookList';
@@ -8,25 +7,16 @@ import BookDetail from './pages/BookDetail';
 
 const App = () => {
   return (
-    <AppDom>
+    <div className="flex w-full min-h-[95vh] flex-col justify-center items-center gap-[30px]">
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/books' element={<BookList />}>
           <Route path=':id' element={<BookDetail />} />
         </Route>
       </Routes>
-    </AppDom>
+    </div>
   )
 }
 
 export default App;
 
-const AppDom = styled.div`
-  display: flex;
-  width: 100%;
-  min-height: 95vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-`;
