@@ -1,22 +1,33 @@
-import React from 'react'
+import { useState } from 'react'
 import styled from 'styled-components';
 import useCartStore from '../store/useCartStore';
 
 function CartPage() {
+  const [isOrderComplete, setIsOrderComplete] = useState(false);
   const cartItems = useCartStore(((state) => state.cartItems));
   const addToCart = useCartStore((state) => state.addToCart);
   const decreaseFromCart = useCartStore((state) => state.decreaseFromCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const removeAll = useCartStore((state) => state.removeAll);
   let totalPrice = 0;
 
   for (const cartItem of cartItems){
     totalPrice += cartItem.price * cartItem.quantity;
   }
 
+  const handleCheckout = () => {
+    if (cartItems.length === 0) return;
+
+    removeAll();
+    setIsOrderComplete(true);
+  }
+
   return(
     <Section>
       <SectionTitle>장바구니</SectionTitle>
-      {cartItems.length === 0 ? (
+      {isOrderComplete ? (
+        <OrderComplete>주문이 완료되었습니다.</OrderComplete>
+      ) : cartItems.length === 0 ? (
         <Empty>담긴 상품이 없습니다.</Empty>
       ) : (
         <List>
@@ -30,7 +41,12 @@ function CartPage() {
           ))}
         </List>
       )}
-      <Total>{totalPrice.toLocaleString()}원</Total>
+      {!isOrderComplete && cartItems.length > 0 && (
+        <>
+          <Total>{totalPrice.toLocaleString()}원</Total>
+          <CheckoutButton onClick={handleCheckout}>결제하기</CheckoutButton>
+        </>
+      )}
     </Section>
   );
 }

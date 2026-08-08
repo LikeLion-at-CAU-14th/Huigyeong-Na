@@ -26,6 +26,8 @@ const useCartStore = create(
             set((state) => ({
                 cartItems: state.cartItems.map((cartItem) => cartItem.id === productId ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem).filter((cartItem) => cartItem.quantity > 0)
             })),
+        
+        removeAll: () => set({ cartItems: [] }),
 
     })),
     { name: 'cart-storage' })
