@@ -7,6 +7,11 @@ function CartPage() {
   const addToCart = useCartStore((state) => state.addToCart);
   const decreaseFromCart = useCartStore((state) => state.decreaseFromCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
+  let totalPrice = 0;
+
+  for (const cartItem of cartItems){
+    totalPrice += cartItem.price * cartItem.quantity;
+  }
 
   return(
     <Section>
@@ -25,6 +30,7 @@ function CartPage() {
           ))}
         </List>
       )}
+      <Total>{totalPrice.toLocaleString()}원</Total>
     </Section>
   );
 }
