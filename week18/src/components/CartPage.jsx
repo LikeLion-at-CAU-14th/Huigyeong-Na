@@ -4,6 +4,8 @@ import useCartStore from '../store/useCartStore';
 
 function CartPage() {
   const cartItems = useCartStore(((state) => state.cartItems));
+  const addToCart = useCartStore((state) => state.addToCart);
+  const decreaseFromCart = useCartStore((state) => state.decreaseFromCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return(
@@ -16,7 +18,8 @@ function CartPage() {
           {cartItems.map((item, index) => (
             <Item key={index}>
               <ItemName>{item.name}</ItemName>
-              <ItemPrice>{item.price.toLocaleString()}원</ItemPrice>
+              <QuantityControl><QtyButton onClick={() => decreaseFromCart(item.id)}>-</QtyButton>{item.quantity}개<QtyButton onClick={() => addToCart(item)}>+</QtyButton></QuantityControl>
+              <ItemPrice>{((item.price)*(item.quantity)).toLocaleString()}원</ItemPrice>
               <RemoveButton onClick={() => removeFromCart(index)}>삭제</RemoveButton>
             </Item>
           ))}

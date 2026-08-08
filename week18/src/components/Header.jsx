@@ -6,7 +6,14 @@ import CartPage from "./CartPage";
 
 
 function Header(){
-    const cartCount = useCartStore((state) => state.cartItems.length);
+    const cartCount = useCartStore((state) => {
+      let sum = 0;
+      for (const cartItem of state.cartItems){
+        sum += cartItem.quantity;
+      }
+      return sum;
+    });
+    
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     return(

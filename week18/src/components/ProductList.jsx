@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import useCartStore from '../store/useCartStore';
 
 const products = [
-    { id: 1, name: '멋사 키링', price: 8000},
-    { id: 2, name: '멋사 스티커', price: 3000 },
-    { id: 3, name: '멋사 에코백', price: 15000 },
+    { id: 1, name: '멋사 키링', price: 8000, quantity: 1 },
+    { id: 2, name: '멋사 스티커', price: 3000, quantity: 1 },
+    { id: 3, name: '멋사 에코백', price: 15000, quantity: 1 },
 ];
 
 function ProductList(){
