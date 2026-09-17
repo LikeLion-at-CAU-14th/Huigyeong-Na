@@ -9,3 +9,5 @@ export interface QuoteResponse{
     quote: string;
     author: string;
 }
+
+export type FilterType = 'all' | 'inProgress' | 'completed';

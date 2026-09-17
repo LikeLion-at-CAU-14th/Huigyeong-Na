@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import TodoStats from './components/TodoStats';
 import TodoInput from './components/TodoInput';
-import type { QuoteResponse, Todo } from './types/todo';
+import { type FilterType, type QuoteResponse, type Todo } from './types/todo';
 import { useState } from 'react';
 import TodoItem from './components/TodoItem';
 
@@ -51,6 +51,14 @@ export default function App() {
     }
   }
 
+  const [filter, setFilter] = useState<FilterType>('all');
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === 'all') return true;
+    if (filter === 'inProgress') return !todo.isDone;
+    if (filter === 'completed') return todo.isDone;
+  })
+
   return (
     <Wrapper>
       <Container>
@@ -69,12 +77,18 @@ export default function App() {
           </AdviceBox>
         </AdviceSection>
 
+        <FilterContainer>
+          <FilterButton $active={filter==='all'} onClick={() => setFilter('all')}>전체</FilterButton>
+          <FilterButton $active={filter==='inProgress'} onClick={() => setFilter('inProgress')}>진행 중</FilterButton>
+          <FilterButton $active={filter==='completed'} onClick={() => setFilter('completed')}>완료</FilterButton>
+        </FilterContainer>
+
         <TodoInput onAdd={handleAdd} />
         <TodoList>
-          {todos.length === 0 ? (
+          {filteredTodos.length === 0 ? (
             <Empty>할 일이 없습니다. 새로운 할 일을 추가해보세요!</Empty>
           ) : (
-            todos.map((todo) => (
+            filteredTodos.map((todo) => (
               <TodoItem
                 key={todo.id}
                 todo={todo}
@@ -168,14 +182,13 @@ const RecommendButton = styled.button`
     background-color: #dbe4ff;
   }
 `;
-/*
+
 // 과제용 스타일 (필요시 사용해주세요!)
 const FilterContainer = styled.div`
   display: flex;
   gap: 8px;
   margin-bottom: 20px;
 `;
-
 const FilterButton = styled.button<{ $active: boolean }>`
   padding: 8px 16px;
   border-radius: 20px;
@@ -194,4 +207,3 @@ const FilterButton = styled.button<{ $active: boolean }>`
     border-color: #ff6b35;
   }
 `;
-*/
