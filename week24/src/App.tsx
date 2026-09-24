@@ -32,6 +32,7 @@ export default function App() {
   const postQuery = useQuery({
     queryKey: ['post', selectedPostId],
     queryFn: () => getPost(selectedPostId),
+    enabled: selectedPostId != null,
     staleTime: 5000,
     gcTime: 15000,
   })
