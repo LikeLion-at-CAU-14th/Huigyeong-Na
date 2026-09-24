@@ -70,6 +70,7 @@ export async function addPost({title, content}: AddPostInput): Promise<Post>{
 
 // [과제 1-1] 게시글 상세 조회 함수 작성하기
 export async function getPost(id: number|null): Promise<Post|undefined>{
+  console.log('getPost 호출', new Date().toLocaleTimeString());
   await delay(500);
   return posts.find((post) => post.id === id);
 }
