@@ -1,5 +1,6 @@
 import { movies } from '@/data/movies';
 import { Noto_Sans_KR } from 'next/font/google';
+import Image from 'next/image';
 
 const notoSansKr = Noto_Sans_KR({
   subsets: ['latin'],
@@ -29,9 +30,11 @@ export default async function MovieDetailPage({
     <main className={notoSansKr.className}>
       <h1>{movie.title}</h1>
       
-      <img
+      <Image
         src={movie.image}
         alt={movie.title}
+        width={250}
+        height={360}
       />
 
       <p>
