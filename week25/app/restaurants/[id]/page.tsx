@@ -1,6 +1,6 @@
 import LikeButton from "@/components/LikeButton";
+import BackButton from "@/components/BackButton";
 import { restaurants } from "@/data/restaurants";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export default async function RestaurantsDetailPage({
@@ -25,9 +25,7 @@ export default async function RestaurantsDetailPage({
             </p>
             <p className="rounded-xl bg-orange-50 p-4">“{restaurant.comment}”</p>
             <LikeButton />
-            <Link href="/restaurants" className="text-orange-500 underline">
-                목록으로 돌아가기
-            </Link>
+            <BackButton />
         </div>
     )
 }
