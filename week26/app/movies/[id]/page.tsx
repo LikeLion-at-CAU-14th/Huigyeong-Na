@@ -1,4 +1,10 @@
 import { movies } from '@/data/movies';
+import { Noto_Sans_KR } from 'next/font/google';
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface MovieDetailPageProps {
   params: Promise<{
@@ -16,11 +22,11 @@ export default async function MovieDetailPage({
   );
 
   if (!movie) {
-    return <p>영화를 찾을 수 없습니다.</p>;
+    return <p className={notoSansKr.className}>영화를 찾을 수 없습니다.</p>;
   }
 
   return (
-    <main>
+    <main className={notoSansKr.className}>
       <h1>{movie.title}</h1>
       
       <img
