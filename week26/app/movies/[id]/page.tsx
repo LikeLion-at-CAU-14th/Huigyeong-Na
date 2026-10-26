@@ -1,6 +1,7 @@
 import { movies } from '@/data/movies';
 import { Noto_Sans_KR } from 'next/font/google';
 import Image from 'next/image';
+import MovieReviewsButton from '@/components/MovieReviewsButton';
 
 const notoSansKr = Noto_Sans_KR({
   subsets: ['latin'],
@@ -44,7 +45,7 @@ export default async function MovieDetailPage({
       <p style={{ whiteSpace: 'pre-line' }}>{movie.description}</p>
 
       {/*과제3 - 관람평 불러오기*/}
-
+      <MovieReviewsButton key={movie.id} />
     </main>
   );
 }
