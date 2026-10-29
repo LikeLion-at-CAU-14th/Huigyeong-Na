@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
 
 function App() {
   const [input, setInput] = useState("");
@@ -213,7 +214,7 @@ function App() {
                     : "assistant-message"
                 }`}
               >
-                {message.text}
+                <ReactMarkdown>{message.text}</ReactMarkdown>
               </div>
             </div>
           ))}

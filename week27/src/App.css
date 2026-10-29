@@ -132,12 +132,13 @@ textarea {
   font-size: 15px;
   white-space: pre-wrap;
   word-break: break-word;
+  text-align: left;
 }
 
 .user-message {
   background: #e57113;
   color: #ffffff;
-  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px; 
 }
 
 .assistant-message {
