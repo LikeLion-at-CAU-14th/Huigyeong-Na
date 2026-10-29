@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [input, setInput] = useState("");
@@ -62,46 +63,61 @@ function App() {
       console.log("REQUEST MODEL:", model);
 
 
+      // 과제: API 호출 리팩토링
+      // 다만 이미 실습에서 fetch를 사용했기 때문에 axios로 리팩토링 하겠습니당
+
+      const requestData = {
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: userMessage }],
+          },
+        ],
+      };
+
+      const response = await axios.post(url, requestData);
+      const data = response.data;
+
       // 4. fetch()를 이용해 Gemini API에 요청 보내기
       // await: 비동기 작업이 완료될 때까지 기다린 후 결과를 받음
 
       // ===== TODO 3: Gemini API 호출 =====
       // fetch(), POST, headers, body 작성
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              role: "user",
-              parts: [
-                {
-                  text: userMessage,
-                },
-              ],
-            },
-          ],
-        }),
-      })
+      // const response = await fetch(url, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     contents: [
+      //       {
+      //         role: "user",
+      //         parts: [
+      //           {
+      //             text: userMessage,
+      //           },
+      //         ],
+      //       },
+      //     ],
+      //   }),
+      // })
       // ======================================
 
 
       // 6. Gemini API에서 받은 응답을 JSON 객체로 변환
-      const data = await response.json();
+      // const data = await response.json();
 
-      console.log("HTTP STATUS:", response.status);
-      console.log("Gemini Response:", data);
+      // console.log("HTTP STATUS:", response.status);
+      // console.log("Gemini Response:", data);
 
       // 7. API 요청이 실패한 경우 오류 처리
       // HTTP 상태 코드가 정상 범위(200~299)가 아니면 오류 발생
-      if (!response.ok) {
-        throw new Error(
-          data?.error?.message ||
-            `Gemini API 요청에 실패했습니다. (${response.status})`
-        );
-      }
+      // if (!response.ok) {
+      //   throw new Error(
+      //     data?.error?.message ||
+      //       `Gemini API 요청에 실패했습니다. (${response.status})`
+      //   );
+      // }
 
 
       // 8. API 응답에서 AI가 생성한 텍스트 추출
